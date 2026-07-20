@@ -1,0 +1,171 @@
+O TrAcEs — Trilha de Acompanhamento Estudantil configura-se como um ecossistema digital de gestão acadêmica e monitoramento pedagógico que integra de forma simbiótica a Secretaria Escolar, o Corpo Docente e os Responsáveis Legais dos alunos. Projetada sob os paradigmas da Clean Architecture no ecossistema Python/SQLite e guiada pelo framework do Design Centrado no Usuário (DCU), a plataforma preenche uma lacuna crítica na gestão de políticas públicas educacionais: a democratização do acesso à informação institucional sem a exigência de alto letramento digital prévio por parte da comunidade de cuidado.
+Diferenciando-se de sistemas escolares tradicionais — frequentemente pautados por interfaces burocráticas e barreiras de acessibilidade —, o TrAcEs adota o modelo de navegação Hub-and-Spoke. O Dashboard atua como o núcleo dinâmico que centraliza alertas preventivos (antecipando riscos de evasão ou retenção) e distribui os fluxos para módulos especializados de avaliação, assiduidade e comunicação institucional.
+A solução se destaca pelo compromisso ético e técnico com a inclusão digital, assegurando conformidade estrita com as diretrizes WCAG 2.1 Nível AA e a aplicação rigorosa das 10 Heurísticas de Nielsen, convertendo requisitos de software em uma ferramenta de emancipação, interdependência positiva e transparência social.
+Cumprimento dos Requisitos do Entregável
+A equipe compreendeu o entregável não como um exercício cosmético de desenho de telas, mas como a materialização visual de regras de domínio complexas e o atendimento a normativas internacionais de usabilidade.
+1. Aplicação das 10 Heurísticas de Nielsen
+Visibilidade do Estado do Sistema: Evidenciada pelo indicador de carregamento de dados e pela atualização imediata dos blocos de balanço anual de assiduidade.
+Compatibilidade entre o Sistema e o Mundo Real: Uso de terminologias familiares e tabelas acadêmicas que replicam o modelo tradicional de boletins, eliminando jargões excessivamente técnicos.
+Prevenção de Erros: Implementada na Tela 6 através de campos de entrada de notas com máscaras de validação em tempo real e um modal de confirmação obrigatório antes da publicação dos dados.
+Reconhecimento em vez de Recall: Inclusão de legendas estáticas de status no rodapé de todas as tabelas e a explicitação da fórmula matemática utilizada para consolidar as médias.
+2. Robustez na Acessibilidade Web (WCAG 2.1 AA)
+A interface foi projetada em resolução de alta fidelidade (1920 x 1080) assegurando os seguintes parâmetros técnicos:
+Contraste de Texto Normal: Proporção estrita superior a 4.5:1 (buscando a meta AAA de 7:1 em dados tabulares).
+Navegabilidade Lógica: Layout estruturado espacialmente para respeitar a ordem natural de tabulação via teclado (Skip Links funcionais integrados na barra global superior).
+Componentes Responsivos: Documentação de quebra de malha (breakpoints), prevendo a conversão do grid do calendário em formato de lista sequencial vertical para dispositivos móveis.
+3. Componente Extensionista e Utilidade Social
+O alinhamento do protótipo com o ecossistema extensionista reflete-se na capacidade de a solução ser aplicada na profissionalização de escolas comunitárias e cursos livres de pequeno porte na região do Cariri, garantindo uma ferramenta leve e inclusiva capaz de rodar de forma eficiente em hardwares limitados
+Apresentação, Funcionalidades e Fluxos das 6 Telas do Protótipo
+Abaixo, é detalhado a análise estrutural, funcional e de usabilidade de cada uma das telas que compõem o MVP do projeto.
+Tela 1: Dashboard do Responsável (Home dos Pais e Responsáveis)
+
+Apresentação e Estrutura: Atua como o Hub centralizador da experiência do usuário. Apresenta uma barra superior de acessibilidade global persistente, cabeçalho de identificação com controle de perfil e uma saudação personalizada ("Olá, Maria!").
+Funcionalidades Existentes: * Widget de Alertas Importantes: Mecanismo de revelação progressiva que empurra notificações críticas de notas baixas e frequência limite imediatamente após o login. Possui controle de fechamento manual para mitigar sobrecarga cognitiva.
+Cards Dinâmicos de Filhos: Grid informativo que sintetiza o status acadêmico individual de cada estudante vinculado (Ana Silva e João Silva) por meio de métricas quantitativas de aprovação, recuperação e reprovação.
+Menu Rápido de Atalhos: Conjunto de botões funcionais para as seções de Boletim, Notas, Frequência e Avisos. Os módulos "Perfil" e "Suporte" apresentam indicador visual de bloqueio temporário (disabled via opacidade controlada e ícone de cadeado) por estarem fora do escopo do MVP.
+Fluxos Representados: Concretiza o Fluxo 1 (Visualização Geral). A partir desta tela, o responsável consegue escnear em menos de 5 segundos se há pendências críticas com seus dependentes e decidir em qual ramificação (Spoke) deseja aprofundar a navegação via botões "Detalhes" ou "Menu Rápido".
+
+Tela 2: Boletim Escolar
+
+Apresentação e Estrutura: Tela de imersão de dados tabulares acessada via clique em "Boletim". Mantém a consistência global através do header fixo e introduz navegação de retorno clara ("⬅️ Voltar ao Painel").
+Funcionalidades Existentes:
+Filtros de Escopo: Dropdowns acessíveis com rótulos semânticos explícitos para seleção de aluno e ano letivo.
+Card de Resumo Geral: Exibição limpa e em destaque da série/turma/turno, média geral consolidada, taxa de frequência absoluta e a situação de elegibilidade atual do estudante.
+Tabela de Rendimento Semântico: Matriz robusta correlacionando Disciplinas, Docentes responsáveis, notas fracionadas por bimestre, média final calculada e badges textuais de status ("Aprovado", "Recuperação").
+Legenda Explicativa Integrada: Caixa informativa no rodapé da tabela detalhando os intervalos numéricos de aprovação.
+Fluxos Representados: Viabiliza a primeira metade do Fluxo 2 (Acompanhamento de Rendimento). O fluxo demonstra como o sistema sintetiza dados complexos de múltiplas matérias em uma única visualização comparativa, oferecendo botões de exportação física/digital ("Imprimir", "Baixar PDF", "Enviar E-mail") e um gatilho direto para detalhamento analítico ("Ver Notas").
+Tela 3: Notas Detalhadas
+Apresentação e Estrutura: Subseção de granularidade máxima do desempenho avaliativo. Apresenta o detalhamento pedagógico de como as notas contidas no boletim foram construídas.
+Funcionalidades Existentes:
+Filtros de Disciplina: Seletor focado que permite isolar o histórico avaliativo de uma matéria por vez (ex: "Português — Profa. Ana Costa").
+Tabelas Seccionadas por Bimestre: Divisão cronológica clara que lista individualmente o nome da atividade (Prova 1, Trabalho do Filme, Seminário), seu tipo, o peso atribuído na média ponderada, a nota real obtida e o status binário de validação.
+Transparência Algorítmica: Exibição explícita da fórmula matemática da Média Ponderada.
+Fluxos Representados: Conclusão do Fluxo 2. Demonstra o princípio do reconhecimento em vez de evocação: o responsável compreende de forma autônoma a composição da nota do estudante, eliminando a ambiguidade interpretativa e reduzindo a necessidade de acionamento do suporte escolar.
+
+Tela 4: Frequência e Calendário 
+Apresentação e Estrutura: Interface diagnóstica e preventiva focada na assiduidade do estudante.
+Funcionalidades Existentes:
+Cards de Balanço Consolidado: Separação explícita entre o resumo do mês vigente (presenças, faltas absolutas e justificadas em formato de fração e percentual) e o Balanço Anual Acumulado confrontado com o limite regulatório de 75%.
+Grid de Calendário Visual Inclusivo: Malha interativa mapeando os dias úteis do mês. Cada célula contém dupla codificação: cores de baixo contraste agressivo combinadas com siglas universais entre colchetes ([P] Presente, [F] Falta, [F*] Falta Justificada, [-] Sem Aula). O dia 11 (Falta Justificada) recebe destaque de alto contraste para foco imediato.
+Repositório de Justificativas Registradas: Histórico cronológico no rodapé listando atestados médicos anexados e consultas validadas pela secretaria.
+Fluxos Representados: Executa o Fluxo 3 (Verificação de Frequência e Prevenção). Garante ao usuário a identificação instantânea de padrões de absenteísmo (ex: faltas recorrentes em dias específicos da semana) e oferece caminhos de ação imediata ("Solicitar Justificativa" e "Imprimir Extrato").
+
+Tela 5: Avisos e Comunicados
+
+
+
+Apresentação e Estrutura: Central unificada de comunicação bidirecional entre a instituição e a comunidade escolar.
+
+
+Funcionalidades Existentes:
+Filtros de Categorização: Dropdowns para refinar mensagens por Tipo (Urgente, Geral, Pedagógico) e Status (Lido, Não Lido).
+Badge Numérico de Mensagens Pendentes: Indicador visual acoplado à aba ativa ("Avisos Não Lidos (3)") para gestão de esforço de leitura.
+Cards de Mensagens Expansíveis: Blocos estruturados com metadados claros (título, remetente, data de publicação, tag de criticidade) e botões de ação contextuais ("Ler completo" e "Marcar Como Lido").
+Accordion para Histórico: Seção colapsável para "Avisos Já Lidos (2)", ocultando mensagens antigas para manter a clareza visual.
+Mecanismo Push/Email: Checkbox de assinatura para recebimento automático de notificações externas.
+
+
+Fluxos Representados: Concretiza o Fluxo 4 (Leitura de Comunicados). Demonstra o fluxo de triagem da informação: o usuário consome rapidamente os alertas cruciais da direção e limpa sua caixa de entrada de forma intuitiva, movendo itens para a seção colapsada de lidos.
+
+Tela 6: Área do Docente 
+
+Apresentação e Estrutura: Interface de entrada de dados (módulo operacional de escrita) desenvolvida para alimentar dinamicamente as tabelas de Boletim, Notas e Frequência consultadas pelos responsáveis (Telas 2, 3 e 4).
+
+Funcionalidades Existentes:
+
+Seletores Centrais de Escopo: Filtros dropdown obrigatórios e sequenciais para determinar a Turma (ex: "9º Ano A — Manhã"), a Disciplina sob sua regência ("Português") e o Tipo de Registro pretendido ("Notas/Avaliações" ou "Frequência Diária").
+Grid de Entrada de Dados (Modo Notas Ativo): Tabela parametrizada que renderiza a listagem oficial de alunos com avatar/iniciais, matrícula e campos de entrada de texto numérico (inputs) para as notas do 1º e 2º Bimestre.
+Feedback Visual Imediato: Indicação clara das regras de validação do domínio (valores aceitos estritamente entre 0,0 e 10,0) com previsão de alteração cromática de bordas para sinalizar sucesso ou erro de entrada de dados.
+Barra de Controle de Estado: Botões fixos no rodapé com diferenciação de hierarquia visual: "Salvar Rascunho" (interação segura, sem publicação) e "Publicar no Sistema" (ação primária destacada com aviso de impacto em tempo real para as famílias).
+
+Fluxos Representados: Representa o fluxo de alimentação do sistema. Demonstra o fechamento do ciclo de dados do TrAcEs: o professor insere as notas em lote, o sistema valida a consistência das informações antes da persistência e, após a confirmação no modal de salvamento, atualiza imediatamente os painéis de visualização dos pais, consolidando a interdependência e a transparência da política pedagógica da instituição.
+
+Implementamos 7 classes fundamentais que compõem o núcleo do MVP: Student, Teacher, Parent, Classroom, Assessment, Grade e Attendance. Estas entidades foram projetadas para representar não apenas dados estáticos, mas as relações dinâmicas do ambiente escolar, como o vínculo entre responsáveis e alunos ou a associação de notas a avaliações específicas.
+
+Explicação Detalhada do Código-Fonte (src/domain/models.py)
+Cada classe foi desenvolvida no arquivo src/domain/models.py. Diferente de implementações simples, nossas classes possuem "inteligência" própria. O método __init__ atua como um guardião da consistência:
+
+Validações Complexas: Utilizamos o arquivo src/utils.py para integrar algoritmos reais de validação, como o cálculo de dígitos verificadores para CPFs e expressões regulares (Regex) para e-mails.
+Integridade de Domínio: Cada classe garante suas próprias regras de negócio; por exemplo, a classe Assessment valida se o peso e a nota máxima estão em intervalos permitidos, enquanto a classe Grade impede o lançamento de notas negativas ou superiores ao máximo definido para aquela prova.
+Consistência de Estado: Através desse rigor no construtor, garantimos que nenhum objeto inválido circule pelas camadas do sistema, eliminando erros em cascata.
+
+Processos de Software e Arquitetura em Camadas
+
+Adotamos a Arquitetura em Camadas (Layered Architecture), estruturando o código em Domain, Application e Infrastructure. Este processo garante a Separação de Preocupações (SoC) e uma manutenção simplificada:
+
+Camada de Domínio (src/domain): Contém os modelos e Enums (Bimester, Shift, etc.). É o "coração" do sistema, totalmente isolado de tecnologias externas.
+Camada de Aplicação (src/application): Implementada no arquivo services.py, esta camada orquestra as ações do usuário. É aqui que reside a lógica de cálculo de médias bimestrais ponderadas e a geração de extratos de frequência, utilizando os dados fornecidos pelo domínio.
+Camada de Infraestrutura (src/infrastructure): Gerencia a persistência real no SQLite. Utilizamos o padrão Repository Pattern em database.py, o que permite que a lógica acadêmica seja testada de forma isolada, sem depender da existência física do banco de dados durante os testes unitários.
+
+A materialização do protótipo de alta fidelidade do TrAcEs, validada pelas interfaces analíticas de telas como a Prototipação - Tela 1 a Prototipação - Tela 6, reflete a incorporação sistemática de padrões de design universais e leis consagradas de UX. O projeto busca superar o aspecto puramente estético para operar como uma ferramenta de coresponsabilidade pedagógica e inclusão social.
+Abaixo estão descritos os pilares fundamentais aplicados à solução:
+1. Design Centrado no Usuário (DCU) e Empatia Cognitiva
+A arquitetura do sistema foi projetada sob o reconhecimento das assimetrias socioeconômicas e do espectro heterogêneo de letramento digital que caracteriza os arranjos familiares contemporâneos (responsáveis na faixa de 25 a 70 anos).
+Abordagem Inclusiva: Em vez de exigir que o usuário compreenda fluxos operacionais complexos, o sistema adapta-se às demandas do cuidador, oferecendo respostas imediatas às suas principais angústias: a integridade escolar, o risco de retenção e as comunicações institucionais.
+Mitigação de Barreiras Sociais: A escolha por elementos de interface familiares e de leitura direta garante autonomia e segurança aos usuários com baixa familiaridade tecnológica.
+
+2. Revelação Progressiva (Progressive Disclosure) e Lei de Miller
+Para evitar a sobrecarga visual e cognitiva do usuário — comum em sistemas de gestão acadêmica —, a interface gerencia o fluxo de informações através do fracionamento de dados (chunking), limitando o número de estímulos simultâneos na tela.
+Aplicação no Hub Central: Na Prototipação - Tela 1 - Dashboard_3.png, o usuário visualiza inicialmente apenas o diagnóstico consolidado de cada filho. O aprofundamento analítico ocorre somente após o acionamento voluntário do botão "Detalhes", que direciona o fluxo para a visão tabular.
+Gestão de Mensagens: Na Prototipação - Tela 5 - Avisos e Comunicados_3.png, os comunicados exibem apenas uma síntese inicial. O conteúdo integral é revelado sob demanda via botão "Ler completo", enquanto o histórico antigo é arquivado em painéis colapsáveis do tipo Accordion (sanfona), despoluindo o campo visual principal.
+
+3. Consistência Visual e Previsibilidade (Lei de Jakob)
+O TrAcEs aproveita os modelos mentais pré-existentes dos usuários para acelerar a curva de aprendizado e conferir segurança na navegação.
+Componentes Persistentes: O cabeçalho institucional (contendo marca, busca, notificações e avatar) e a barra global de acessibilidade permanecem estáticos e idênticos em todas as transições de tela.
+Padronização Espacial: O grid de espaçamento interno fixado em 16px e a consistência tipográfica estabelecem um ritmo visual previsível, orientando o olhar do usuário e indicando claramente os limites de cada componente estrutural.
+
+4. Princípios de Affordance e Feedback Imediato do Sistema
+O comportamento dos elementos da interface simula propriedades físicas de interação, deixando claro quais itens são passíveis de clique ou preenchimento.
+Estados de Inputs e Botões: Na Prototipação - Tela 6 - Área do Docente, os campos de digitação numérica (inputs) e os botões de controle utilizam feedbacks visuais instantâneos. Caso o docente digite um valor fora do intervalo de domínio (0,0 a 10,0), a borda do campo altera-se imediatamente para sinalizar a inconsistência, prevenindo o erro antes da submissão.
+Indicação de Estados Inativos: O uso de opacidade controlada e o ícone complementar de cadeado nos botões "Perfil" e "Suporte" comunicam de maneira transparente o escopo delimitado do MVP, evitando cliques frustrados.
+
+5. Desenho Universal e Acessibilidade Estrita (WCAG 2.1 AA)
+A acessibilidade não foi implementada de forma periférica, mas sim como um requisito estrutural indissociável da engenharia de software da plataforma
+
+Prática UI/UX Adotada 
+Requisito WCAG Atendido 
+Impacto Inclusivo Garantido 
+Barra Global de Acessibilidade 
+Critérios de Navegação 
+Disponibiliza atalhos de salto (Skip Links) para pular o menu institucional e ir direto ao conteúdo principal, beneficiando usuários de leitores de tela e navegação por teclado.
+Ajuste de Magnificação (A+/A-) 
+Critério 1.4.4 (Redimensionar Texto) 
+Permite a ampliação dos caracteres sem quebrar o layout da interface, atendendo a idosos e pessoas com presbiopia ou baixa visão moderada. 
+Contraste Mínimo de 4,5:1 
+Critério 1.4.3 (Contraste Mínimo) 
+Garante que toda a massa textual e dados tabulares (como os exibidos na Prototipação - Tela 2 - Boletim Escolar) permaneçam legíveis sob variadas condições de iluminação. 
+Codificação Dupla de Status 
+Critério 1.4.1 (Uso de Cores) 
+Assegura que diagnósticos críticos (Aprovado, Recuperação, Falta Crítica) incorporem símbolos e etiquetas de texto associados à cor, eliminando barreiras para usuários com daltonismo. 
+
+Ao cruzar os requisitos técnicos da engenharia reversa com as melhores práticas de IHC, o protótipo de alta fidelidade do TrAcEs consolida-se como um modelo metodologicamente correto, acessível e aderente às reais demandas da comunidade escolar. 
+
+A equipe compreendeu que o Componente Extensionista é o pilar que valida a utilidade social do software. Por isso, criamos no README.md a seção obrigatória "Possíveis usos da nossa solução", onde conectamos cada funcionalidade técnica a uma dor real da comunidade ou de pequenos negócios.
+Abaixo, aprofundamos os três cenários identificados, justificando como o sistema resolve problemas específicos:
+
+Profissionalização de Escolas de Pequeno Porte e Cursos Livres
+
+Muitas escolas de ensino básico, de idiomas, música ou artes na região do Cariri ainda dependem de processos manuais ou planilhas isoladas que geram perda de histórico e erros de cálculo.
+
+Impacto Real: Nossa solução permite a transição do físico para o digital sem a necessidade de investimentos em softwares caros e complexos.
+Solução de Problema: A automação do cálculo de médias ponderadas e o controle centralizado de matrículas eliminam erros humanos, garantindo que o boletim entregue ao aluno seja matematicamente preciso e confiável.
+
+Sustentabilidade e Transparência em ONGs e Projetos Sociais
+
+Instituições que oferecem reforço escolar ou atividades socioeducativas dependem frequentemente de doações e parcerias que exigem prestação de contas rigorosas.
+
+Impacto Real: O sistema atua como uma ferramenta de gestão de impacto social.
+Solução de Problema: O extrato de frequência detalhado por período e disciplina permite que a ONG comprove a assiduidade dos beneficiários aos seus financiadores. A capacidade de registrar faltas justificadas com motivos (ex: atestados) profissionaliza o atendimento social e ajuda a identificar causas de evasão escolar prematuramente.
+
+Escalabilidade em Centros de Treinamento Corporativo
+
+Pequenas empresas que investem na capacitação de funcionários precisam monitorar se o treinamento está gerando resultados práticos.
+Impacto Real: O sistema organiza o capital humano através do acompanhamento de competências.
+Solução de Problema: Ao tratar cada "treinamento" como uma disciplina e cada "avaliação" como um teste de competência, o RH pode identificar rapidamente funcionários que atingiram a média de aprovação e estão aptos para novas funções, centralizando o histórico de desenvolvimento profissional em um único banco de dados seguro.
+
+Dimensão da Inclusão Digital
+
+Ao optarmos por uma solução leve em Python e SQLite, garantimos que o software possa rodar em computadores com recursos limitados, facilitando a inclusão digital de entidades que não possuem acesso a servidores de alta performance ou conexão constante com a internet.
+
+Evidência de Atendimento: Esta seção está disponível na raiz do nosso repositório no GitHub, dentro do arquivo README.md, sob o título exato exigido pelo entregável, servindo como guia para que qualquer pessoa da comunidade entenda o valor prático da nossa aplicação.
+
