@@ -570,7 +570,7 @@ Mantivemos uma estrutura organizada para facilitar a navegação:
 
 ```text
 sistema_acompanhamento_escolar_pi3-ep1/
-├── 📖 README-PI3-EP1.md               # Documentação principal PI3-EP1
+├── 📖 README.md                       # Documentação principal PI3-EP1
 ├── 🐍 main.py                         # Demonstração CLI / Backend (PI2)
 ├── 📦 requirements.txt                # Dependências Python (pytest)
 ├── 📁 docs/                           # Documentação e artefatos visuais
