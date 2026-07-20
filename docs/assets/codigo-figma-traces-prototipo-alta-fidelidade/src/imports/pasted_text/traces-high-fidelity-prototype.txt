@@ -1,0 +1,143 @@
+Prompt – EP1 - Protótipo de alta fidelidade do MVP web
+Assuma o papel de um especialista em desenvolvimento de software, especialmente em programação orientada a objetos utilizando linguagem python, Clean Architecture, mvc, banco de dados, princípios e boas práticas de programação orientada a objetos, Prototipação do Wireframe e do Sitemap, Prototipação de alta fidelidade do MVP web utilizando o Figma, contemplando as principais telas e fluxos da aplicação, boas práticas de usabilidade e experiência do usuário (UX) e design de interfaces, garantindo consistência visual, acessibilidade e clareza na interação do usuário, regras de acessibilidade WEB e as 10 heurísticas de Nielsen. Você deverá usar seus conhecimentos para desenvolver um protótipo de alta fidelidade do MVP web utilizando o Figma, contemplando as principais telas e fluxos da aplicação. Nome do Projeto: “TrAcEs - Trilha de Acompanhamento Estudantil”. O “TrAcEs” é um painel de acompanhamento escolar para pais, professores e estudantes. O protótipo deve ser aderente às boas práticas de usabilidade (UX) e design de interfaces, garantindo consistência visual, acessibilidade e clareza na interação do usuário. Adote postura ativa e rigorosa quanto à qualidade do projeto. 
+Contexto:
+Este projeto é um sistema WEB de gestão acadêmica focado em simplicidade e robustez. Ele permite gerenciar todo o ciclo escolar: desde o cadastro de alunos, professores e responsáveis, até a organização de turmas, lançamento de notas, controle de frequência e geração de boletins. Nosso objetivo foi criar um código limpo, fácil de entender e que utilize boas práticas de engenharia de software, separando as regras de negócio (domínio) da persistência de dados (banco de dados).
+
+Na atividade anterior, minha equipe construiu wireframes de baixa complexidade de 5 telas principais da solução proposta do MVP.
+Seu objetivo é criar um protótipo web de alta fidelidade interativo e responsivo (resolução 1920×1080) para o Protótipo de alta fidelidade WEB intitulado “TrAcEs - Trilha de Acompanhamento Estudantil”. 
+Siga rigorosamente todas as orientações contidas nesse prompt.
+Agora, o próximo passo:
+Nesta etapa, você deverá desenvolver o protótipo navegável de alta fidelidade do MVP web deste projeto.
+O objetivo é permitir a visualização do funcionamento geral da proposta por meio da navegação entre telas, evidenciando a organização da interface, os fluxos principais e a coerência da solução.
+Importante
+O foco principal está em:
+a)	conectar as telas principais;
+b)	representar a navegação essencial;
+c)	demonstrar os fluxos mais importantes do projeto;
+d)	manter coerência com as etapas anteriores já realizadas;
+e)	seguir a coerência com as informações presentes no sitemap;
+f)	seguir a coerência das 5 telas de wireframe de baixa fidelidade para desenvolver o protótipo de alta fidelidade WEB;
+g)	aplicar as 10 Heurísticas de Nielsen, mantendo consistência e padrões em todas as telas;
+h)	Siga rigorosamente as diretrizes de acessibilidade W3C/WCAG 2.1 AA;
+i)	Seguir rigorosamente as regras de relação de contraste para todos os elementos inclusive para itens inativos, buscando padrão ouro.
+Regras de relação de contraste:
+Para garantir a acessibilidade na web, a principal referência mundial são as WCAG (Web Content Accessibility Guidelines), desenvolvidas pelo W3C.
+O contraste de cor é fundamental para que pessoas com baixa visão, daltonismo ou mesmo usuários navegando sob luz solar direta consigam ler o conteúdo textual. As regras são divididas em dois níveis de conformidade: AA (padrão mínimo exigido na maioria das legislações) e AAA (nível mais avançado de acessibilidade).
+As regras de contraste da WCAG 2.1 (e 2.2) baseiam-se em uma proporção de contraste (contrast ratio) que varia de 1:1 (texto e fundo da mesma cor) até 21:1 (texto preto no fundo branco, ou vice-versa).
+a)	Nível AA (Critério de Sucesso 1.4.3) – Mínimo Obrigatório
+Este é o padrão recomendado para a maioria dos sites institucionais, governamentais e comerciais.
+•	Texto normal (abaixo de 18pt / 24px ou abaixo de 14pt / 18.5px em negrito): Requer uma proporção de contraste de, no mínimo, 4.5:1 em relação ao fundo.
+•	Texto grande (a partir de 18pt / 24px ou a partir de 14pt / 18.5px em negrito): Como elementos maiores são mais fáceis de ler, a exigência é menor, sendo no mínimo 3:1.
+b)	Nível AAA (Critério de Sucesso 1.4.6) – Aprimorado
+Este nível oferece uma acessibilidade mais robusta e é ideal para portais públicos ou plataformas educacionais inclusivas.
+•	Texto normal: Requer uma proporção de contraste de, no mínimo, 7:1.
+•	Texto grande: Requer uma proporção de contraste de, no mínimo, 4.5:1.
+c)	Elementos Não-Textuais (Critério de Sucesso 1.4.11 - Nível AA)
+Introduzido para garantir que componentes de interface (UI) e objetos gráficos também sejam visíveis:
+•	Componentes de Interface e Ícones: Botões, bordas de campos de formulário ativos, ícones informativos e estados de foco/seleção devem ter uma proporção de contraste de, no mínimo, 3:1 contra as cores adjacentes.
+Tabela Comparativa de Proporções
+Tipo de Elemento	Nível AA	Nível AAA
+Texto Normal	4.5:1	7:1
+Texto Grande	3:1	4.5:1
+Componentes de UI / Gráficos	3:1	Não aplicável
+
+O cálculo de contraste deverá ser obrigatório e seguido em todos os cenários incluindo:
+a)	Elementos Inativos: Botões ou campos de formulário desabilitados (disabled).
+b)	Puro Ornamento: Textos ou imagens que servem apenas para decoração e não trazem conteúdo informativo.
+c)	Logotipos: O texto que faz parte da identidade visual ou da marca da instituição/empresa não precisa atingir o índice mínimo.
+d)	Texto em Imagens incidentais: Textos que aparecem por acaso em uma fotografia 
+Nota Importante sobre Cores: Lembre-se de que a cor não deve ser o único meio visual para transmitir informação, indicar uma ação ou distinguir um elemento. Por exemplo, links no meio do texto devem ter uma marcação extra (como o sublinhado) e mensagens de erro não devem depender apenas da cor vermelha para serem compreendidas.
+---------------
+Breve descrição das telas (analise as imagens em anexo das telas para verificar mais detalhes).
+ESTRUTURA GLOBAL E COMPONENTES COMUNS (Persistentes em todas as telas)
+1.	BARRA DE ACESSIBILIDADE GLOBAL (Topo extremo): Botões horizontais com alto contraste para 'Ir para o conteúdo', 'Ir para menu', 'Alto contraste', 'Fonte: A+', 'Fonte: A-' e o ícone universal de Acessibilidade.
+2.	HEADER PERSISTENTE: Barra com a Logomarca, título 'Painel escolar', ícone de notificações (Sino) e avatar de perfil.
+TELA 1: DASHBOARD DO RESPONSÁVEL (Home Pais)
+•	Saudação 'Olá, Maria!'. Widget superior 'ALERTAS IMPORTANTES' com botão de fechar (X) [Prevenção de Erros]. Lista interna com ícone de atenção: 'João Silva: Frequência abaixo de 75% em Matemática', 'Ana Silva: Nota baixa em Português (4,5)'.
+•	Seção 'MEUS FILHOS': Grid com dois cards. Card 1 (Ana Silva, 6º Ano | Média: 5,8 [Alerta] | Faltas: 8 (20%) [Alerta]). Card 2 (João Silva, 9º Ano | Média: 7,2 [Check]). Ambos contêm um botão cinza 'Detalhes' [Link para a Tela 2].
+•	MENU RÁPIDO (Rodapé): Grid de 6 botões em formato de card: 'Boletim' [Link para Tela 2], 'Notas' [Link para Tela 3], 'Frequência' [Link para Tela 4], 'Avisos' [Link para Tela 5], 'Perfil', 'Suporte'.
+TELA 2: BOLETIM ESCOLAR (Módulo Pais)
+•	Link de retorno '⬅️ Voltar' [Link para Tela 1]. Título 'Boletim'.
+•	Dropdowns acessíveis com rótulo descritivo (label): 'Selecionar Aluno(a): João Silva Oliveira' e 'Selecionar Ano: 2026'.
+•	Tabela de Rendimento com cabeçalhos claros semânticos. Colunas: Disciplina, Professor(a), 1º Bim, 2º Bim, 3º Bim, 4º Bim, Média, Status. No rodapé da tabela, caixa de Legenda: '✓ Aprovado (≥ 6.0) | ⚠ Recuperação (4.0 - 5.9) | ✕ Reprovado (< 4.0)' [Reconhecimento em vez de recall].
+•	Seção 'AÇÕES': Botões de alto contraste com ícones para 'Imprimir', 'Baixar PDF', 'Enviar Email', 'Ver Notas' [Link para Tela 3].
+TELA 3: NOTAS DETALHADAS (Módulo Pais)
+•	Link de retorno '⬅️ Voltar' [Link para Tela 2]. Filtros: Aluno, Ano e 'Selecionar Disciplina: Português'.
+•	Tabelas separadas por '1º Bimestre' e '2º Bimestre', listando: Avaliação, Tipo, Peso, Nota, Status. Linha final exibindo 'Média Ponderada'. No rodapé, o card descritivo 'Média Anual: 8,04 ✓' e a fórmula 'Σ(nota × peso) / Σ(peso)' explicitada.
+TELA 4: FREQUÊNCIA E CALENDÁRIO (Módulo Pais)
+•	Título 'Frequência - João Silva Oliveira - 2026'. Dropdowns de filtro para Aluno, Disciplina, Mês (Março) e Ano.
+•	Card de Resumo Atual: Presenças (18/20), Faltas (02), Faltas Justificadas (01), Limite Mínimo (75%).
+•	Grid de Calendário Visual: Quadrados com os dias e letras indicativas de status. Dia 11 realçado em contraste cinza-escuro com o rótulo '[F*]' (Falta Justificada). Rodapé com Legenda clara. Lista de 'JUSTIFICATIVAS REGISTRADAS' e botões 'Solicitar Justificativa' e 'Imprimir Extrato'.
+TELA 5: MURAL DE AVISOS (Módulo Pais)
+•	Filtros por Tipo e Status. Tag ativa 'Avisos Não Lidos'. Cards brancos expansíveis com título em negrito (ex: 'IMPORTANTE: Reunião de Pais'), tag de categoria 'Importante', botões internos 'Ler completo' e 'Marcar Como Lido'. Abaixo, seção sanfona (accordion) colapsável para 'Avisos Já Lidos'. Checkbox 'Inscrever-se em notificações por e-mail'.
+TELA 6 (NOVA): PAINEL DE LANÇAMENTO DO PROFESSOR (Módulo Docente - Alimenta as Telas 2, 3 e 4)
+•	Título 'Área do Docente - Lançamento Acadêmico'.
+•	SELETORES DE ESCOPO [Flexibilidade e Eficiência de Uso]: Dropdowns acessíveis com labels claras para 'Selecionar Turma' (ex: 9º Ano A - Manhã), 'Selecionar Disciplina' (ex: Português) e 'Tipo de Registro' (Dropdown com as opções: 'Notas/Avaliações' ou 'Frequência Diária').
+•	FLUXO DE ENTRADA DE DADOS EM GRID [Prevenção de Erros e Controle do Usuário]:
+o	Se selecionado 'Notas': Exibir uma tabela com a lista de alunos da turma. Colunas: Foto/ID, Nome do Aluno, Input de Texto numérico para 'Nota 1º Bimestre', Input para 'Nota 2º Bimestre'. Os campos de input devem ter feedback visual imediato (borda verde se valor válido entre 0 e 10; mensagem de erro com alto contraste se valor inválido) [Compatibilidade com o sistema real/Validação de Domínio].
+o	Se selecionado 'Frequência': Exibir seletor de Data de Calendário (padrão ISO-8601 YYYY-MM-DD). Abaixo, a lista de alunos com uma Chave seletora (Toggle Switch) ou Checkbox acessível por teclado para alternar entre '[P] Presente' e '[F] Falta' de forma rápida para cada estudante.
+•	BOTÕES DE CONTROLE GERAL: Dois botões destacados no rodapé da tabela: Button 1 'Salvar Rascunho' (cor neutra de médio contraste) e Button 2 'Publicar no Sistema' (cor primária de alto contraste). Ao clicar em Publicar, exibir um modal de confirmação [Prevenção de Erros] com o texto: 'Deseja confirmar a publicação? Os dados serão enviados imediatamente para o painel dos responsáveis (Maria) nas Telas de Boletim e Frequência'.
+Gere o layout completo estabelecendo conexões lógicas de protótipo (Prototype Links) entre os menus, botões de Voltar, ajuda, menu e as respectivas páginas descritas.
+Relação com as etapas anteriores
+Para desenvolver este protótipo, você deverá utilizar como base:
+a)	personas criadas;
+b)	cenários de uso;
+c)	fluxos principais já criados e descritos;
+d)	wireframes com as telas já criadas anteriormente;
+e)	decisões de layout, hierarquia visual, tipografia, cor e consistência visual já discutidas anteriormente.
+Mais detalhes do que você deve fazer
+Você deverá produzir um protótipo navegável que represente a proposta da interface.
+Esse protótipo deve contemplar, no mínimo:
+a)	as 6 telas principais do sistema proposto;
+b)	a conexão entre telas por meio de navegação clicável;
+c)	Os fluxos principais de uso;
+d)	coerência entre estrutura, navegação e propósito da interface.
+Escopo mínimo esperado:
+O protótipo deve permitir que seja possível compreender:
+a)	como o usuário entra na interface;
+b)	quais são as telas centrais da proposta;
+c)	como o usuário navega entre essas telas;
+d)	como as ações principais são acionadas;
+e)	como os fluxos definidos anteriormente se concretizam na interface.
+Orientações para a construção do protótipo
+Ao montar o protótipo, a equipe deve observar:
+•	se a navegação está compreensível;
+•	se as ações principais estão claras;
+•	se as telas mantêm coerência visual;
+•	se os fluxos escolhidos representam bem a proposta;
+•	se o protótipo permite entender a solução sem explicações excessivas.
+Critérios gerais de avaliação
+A atividade será avaliada considerando:
+•	coerência com o projeto desenvolvido até aqui;
+•	clareza dos fluxos representados;
+•	qualidade da navegação entre telas;
+•	consistência visual da proposta;
+•	cumprimento das regras de acessibilidade WEB;
+•	cumprimento das regras de relação de contraste;
+•	cumprimento das 10 heurísticas de Nielsen;
+•	organização da entrega.
+Tarefas: Você deverá realizar as tarefas abaixo em etapas, uma por vez, após o meu comando.
+Etapa 0: Analisar e assimilar todos os critérios e instruções deste trabalho e todos os materiais de apoio em anexo.
+Etapa 1: Definir os todos fluxos principais de uso que serão desenvolvidos com base nos materiais de apoio e nas instruções dessa atividade.
+Etapa 2: elaborar a primeira tela do protótipo navegável associada a primeira tela do wire frame de baixa fidelidade.
+Etapa 3: elaborar a segunda tela do protótipo navegável associada a segunda tela do wire frame de baixa fidelidade.
+Etapa 4: elaborar a terceira tela do protótipo navegável associada a terceira tela do wire frame de baixa fidelidade.
+Etapa 5: elaborar a quarta tela do protótipo navegável associada a quarta tela do wire frame de baixa fidelidade.
+Etapa 6: elaborar a quinta tela do protótipo navegável associada a quinta tela do wire frame de baixa fidelidade.
+Etapa 7: elaborar a sexta tela do protótipo navegável associada a tela 6 PAINEL DE LANÇAMENTO DO PROFESSOR (Módulo Docente - Alimenta as Telas 2, 3 e 4)
+Etapa 8: revisão do protótipo navegável para garantir que atenda a todas as orientações dessa atividade e esteja alinhado com os materiais de apoio.
+Materiais de apoio
+Para realizar cada tarefa de cada etapa, você deverá ler, assimilar, entender, apreender e utilizar os seguintes materiais e arquivos em anexo:
+a)	“DESCRICAO_DO_PROJETO.md”
+b)	“relatorio_dos_wireframes_de_baixa_fidelidade_produzido_anteriormente.text”
+c)	“PROTOTIPAGEM_WIREFRAME.md”
+d)	“Wireframe - Painel escolar - Tela 1.png”;
+e)	“Wireframe - Painel escolar - Tela 2.png”;
+f)	“Wireframe - Painel escolar - Tela 3.png”;
+g)	“Wireframe - Painel escolar - Tela 4.png”;
+h)	“Wireframe - Painel escolar - Tela 5.png”;
+i)	“Descrição da tela 6 de lançamento do professor”;
+j)	“SITEMAP.md”.
+Orientações finais para início de execução:
+As etapas 0, 1, 2, 3, 4, 5, 6, 7 e 8 e suas respectivas tarefas deverão ser desenvolvida a partir dos arquivos disponibilizados em anexo e das orientações desta atividade.
+Realize agora as etapas 0, 1, 2 e 3 e aguarde minha autorização para seguir com as próximas etapas.

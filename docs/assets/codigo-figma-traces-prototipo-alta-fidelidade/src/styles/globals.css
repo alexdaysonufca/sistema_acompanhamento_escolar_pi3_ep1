@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #EEF2F7;
+  --bg-card: #FFFFFF;
+  --text-primary: #1A2332;
+  --header-bg: #1B4F8A;
+}
+
+.high-contrast {
+  --bg-primary: #000000;
+  --bg-card: #000000;
+  --text-primary: #FEF08A; /* Amarelo de alto contraste */
+  --header-bg: #000000;
+}
+
+/* Aplique estas variáveis às classes base */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Força a inversão de cores dos seus cards e elementos principais */
+.high-contrast .bg-white, 
+.high-contrast .bg-[#EEF2F7] {
+  background-color: #000000 !important;
+  border-color: #FEF08A !important;
+  color: #FEF08A !important;
+}
+
+.high-contrast .text-[#1A2332], 
+.high-contrast .text-[#4A5568],
+.high-contrast .text-[#374151] {
+  color: #FEF08A !important;
+}
+
+/* Garante que o Header e outros elementos em azul mudem para preto */
+.high-contrast .bg-[#1B4F8A] {
+  background-color: #000000 !important;
+  border-bottom: 2px solid #FEF08A !important;
+}
